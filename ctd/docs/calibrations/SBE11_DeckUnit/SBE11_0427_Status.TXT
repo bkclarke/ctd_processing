@@ -1,0 +1,22 @@
+show_SBE11
+
+C:\Users\Administrator\Desktop>mode com1: BAUD=19200 PARITY=N DATA=8 STOP=1
+
+Status for device COM1:
+-----------------------
+    Baud:            19200
+    Parity:          None
+    Data Bits:       8
+    Stop Bits:       1
+    Timeout:         OFF
+    XON/XOFF:        OFF
+    CTS handshaking: OFF
+    DSR handshaking: OFF
+    DSR sensitivity: OFF
+    DTR circuit:     ON
+    RTS circuit:     ON
+
+
+C:\Users\Administrator\Desktop>echo "DS["  1>com1:
+
+C:\Users\Administrator\Desktop>TYPE com1:   1>D:\JUNK.TXT
