@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<WET_LabsCStar SensorID="71" SB_ConfigCTD_FileVersion="7.26.4.0" >
-  <SerialNumber>593DR</SerialNumber>
-  <CalibrationDate>05-Jun-23</CalibrationDate>
-  <M>19.4020</M>
-  <B>-1.1253</B>
-  <PathLength>0.250</PathLength>
-</WET_LabsCStar>

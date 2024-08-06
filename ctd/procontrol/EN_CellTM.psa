@@ -4,11 +4,11 @@
   <ServerName value="Cell Thermal Mass" />
   <InputDir value="D:\ctd\proc" />
   <InputFileArray size="1" GrowBy="-1" >
-    <ArrayItem index="0" value="" />
+    <ArrayItem index="0" value="EN719_CTD01.cnv" />
   </InputFileArray>
   <OutputDir value="D:\ctd\proc" />
   <NameAppend value="" />
-  <OutputFile value="" />
+  <OutputFile value="EN719_CTD01" />
   <LastProcessed value="0" />
   <Primary >
     <Correct value="1" />
