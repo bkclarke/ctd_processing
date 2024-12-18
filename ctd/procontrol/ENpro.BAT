@@ -34,10 +34,11 @@ rem 	ProDir - Processed directory (output)
 rem
 rem -------------------------------------------------------------------------
 set BatchDir=C:\Windows
-set psaDir=D:\CTD\procontrol
-set TxtFile=D:\CTD\procontrol\ENPRO.txt
-set RawDir=D:\CTD\raw
-set ProDir=D:\CTD\proc
+set psaDir=C:\Users\bonny\Desktop\ctd\procontrol
+set TxtFile=C:\Users\bonny\Desktop\ctd\procontrol\ENPRO.txt
+set RawDir=C:\Users\bonny\Desktop\ctd\raw
+set ProDir=C:\Users\bonny\Desktop\ctd\proc
+set ArchiveDir=C:\Users\bonny\Desktop\
 
 rem -------------------------------------------------------------------------
 rem - Be sure castname was entered, be sure files and directories exist
@@ -65,12 +66,18 @@ rem - Copy .xmlcon file from raw to processed folder(s).
 rem - Process Data. 
 rem -------------------------------------------------------------------------
 copy %RawDir%\%1.xmlCON %ProDir%
-
+echo copy %RawDir%\%1.xmlCON  to %ProDir%
 rem ------------------------------------------------------------------------- 
 rem - Process Data. 
 rem -------------------------------------------------------------------------
 
 %BatchDir%\sbebatch.exe %TxtFile% %RawDir% %1 %ProDir% %psaDir%
+
+rem ------------------------------------------------------------------------- 
+rem - Copy files to data archive. 
+rem -------------------------------------------------------------------------
+echo Archiving .hex and .xmlcon files to %ArchiveDir% 
+python C:\Users\bonny\Desktop\ctd\procontrol\ctd_archive.py \%1.hex \%1.xmlCON %ArchiveDir% %RawDir%
 
 rem ------------------------------------------------------------------------
 rem - Done: say bye, go home
