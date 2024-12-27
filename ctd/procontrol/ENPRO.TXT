@@ -21,6 +21,6 @@ CellTM    /i%3\%2.cnv  /o%3  /f%2  /p%4\EN_CellTM.psa
 @LoopEdit  /i%3\%2.cnv  /o%3  /f%2  /p%4\EN_LoopEdit.psa          
 Derive    /i%3\%2.cnv  /o%3  /f%2  /p%4\EN_Derive.psa			/c%1\%2.xmlcon 
 BinAvg    /i%3\%2.cnv  /o%3  /f%2  /p%4\EN_BinAvg.psa     
-Seaplot   /i%3\%2_avg.cnv  /o%3  /f%2  /p%4\EN_SeaPlot_TTSS.psa
-@BottleSum /i%3\%2.ros  /o%3  /f%2  /p%4\EN_BottleSum.psa		/c%1\%2.xmlcon
+@Seaplot   /i%3\%2_avg.cnv  /o%3  /f%2  /p%4\EN_SeaPlot_TTSS.psa
+BottleSum /i%3\%2.ros  /o%3  /f%2  /p%4\EN_BottleSum.psa		/c%1\%2.xmlcon
 

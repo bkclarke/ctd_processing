@@ -34,17 +34,17 @@ rem 	ProDir - Processed directory (output)
 rem
 rem -------------------------------------------------------------------------
 set BatchDir=C:\Windows
-set psaDir=C:\Users\bonny\Desktop\ctd\procontrol
-set TxtFile=C:\Users\bonny\Desktop\ctd\procontrol\ENPRO.txt
-set RawDir=C:\Users\bonny\Desktop\ctd\raw
-set ProDir=C:\Users\bonny\Desktop\ctd\proc
-set ArchiveDir=C:\Users\bonny\Desktop\
+set psaDir=D:\ctd\procontrol
+set TxtFile=D:\ctd\procontrol\ENPRO.txt
+set RawDir=D:\ctd\raw
+set ProDir=D:\ctd\proc
+set ArchiveDir=\\SHIPBACK\d\DataBackups\ctd
+set ArchiveScript=D:\ctd\procontrol\ctd_archive.py
 
 rem -------------------------------------------------------------------------
 rem - Be sure castname was entered, be sure files and directories exist
 rem -------------------------------------------------------------------------
 if "%1"=="" goto NOARG
-echo %1
 if not exist %psaDir%\EN_Datcnv.psa goto BADENV
 if not exist %TxtFile% goto BADENV
 if not exist %RawDir%\%1.HEX goto BADENV
@@ -60,6 +60,7 @@ echo Batch File: %TxtFile%
 echo Input from: %RawDir%
 echo Output to : %ProDir%
 echo psa files : %psaDir%
+echo Archive raw to : %ArchiveDir%
 
 rem -------------------------------------------------------------------------
 rem - Copy .xmlcon file from raw to processed folder(s). 
@@ -71,19 +72,19 @@ rem -------------------------------------------------------------------------
 rem - Process Data. 
 rem -------------------------------------------------------------------------
 
+echo Batch processing of %1 launched...
+
 %BatchDir%\sbebatch.exe %TxtFile% %RawDir% %1 %ProDir% %psaDir%
 
 rem ------------------------------------------------------------------------- 
 rem - Copy files to data archive. 
 rem -------------------------------------------------------------------------
 echo Archiving .hex and .xmlcon files to %ArchiveDir% 
-python C:\Users\bonny\Desktop\ctd\procontrol\ctd_archive.py \%1.hex \%1.xmlCON %ArchiveDir% %RawDir%
+python %ArchiveScript% \%1.hex \%1.xmlCON %ArchiveDir% %RawDir%
 
 rem ------------------------------------------------------------------------
 rem - Done: say bye, go home
 rem ------------------------------------------------------------------------
-echo. 
-echo Batch processing of %1 launched...
 
 goto END
 

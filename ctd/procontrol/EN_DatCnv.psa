@@ -2,7 +2,7 @@
 <Data_Conversion >
   <Version value="7.26.7.129" />
   <ServerName value="Data Conversion" />
-  <InstrumentPath value="D:\ctd\raw\REPLACE" />
+  <InstrumentPath value="D:\ctd\raw\base.xmlcon" />
   <InstrumentMatch value="1" />
   <InputDir value="D:\ctd\raw" />
   <InputFileArray size="0" GrowBy="-1" />

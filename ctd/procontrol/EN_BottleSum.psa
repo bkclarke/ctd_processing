@@ -2,7 +2,7 @@
 <Bottle_Summary >
   <Version value="7.26.7.129" />
   <ServerName value="Bottle Summary" />
-  <InstrumentPath value="D:\ctd\raw\REPLACE" />
+  <InstrumentPath value="D:\ctd\raw\base.xmlcon" />
   <InstrumentMatch value="1" />
   <InputDir value="D:\ctd\proc" />
   <InputFileArray size="1" GrowBy="-1" >
